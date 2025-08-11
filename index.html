@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>AQ STEEL SHEDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/Frontend/public/assets/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link defer rel="stylesheet" type="text/css" media="screen" href="assets/css/animate.css" />
+    <script src="/assets/js/perfect-scrollbar.min.js"></script>
+    <script defer src="/assets/js/popper.min.js"></script>
+    <script defer src="/assets/js/tippy-bundle.umd.min.js"></script>
+    <script defer src="/assets/js/sweetalert.min.js"></script>
+</head>
+
+<body x-data="main" class="relative overflow-x-hidden font-nunito text-sm font-normal antialiased"
+    :class="[ $store.app.sidebar ? 'toggle-sidebar' : '','system','collapsible-vertical','full','ltr']">
+    <script>
+
+        function toggleFullScreen() {
+            console.log("toggling full screen!");
+            const isFullScreen = document.fullscreenElement;
+            if (!isFullScreen) {
+                document.documentElement.requestFullscreen();
+                console.log("Not full screen")
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("export").addEventListener("click", function () {
+                // Triggering the React component functionality
+                // Assuming you have a global function printSceneReact defined in your React code
+                printScene();
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("export_image").addEventListener("click", function () {
+                // Triggering the React component functionality
+                // Assuming you have a global function printSceneReact defined in your React code
+                export_image();
+            });
+        });
+    </script>
+    <!-- sidebar menu overlay -->
+    <div x-cloak class="fixed inset-0 z-50 bg-[black]/60 lg:hidden" :class="{'hidden' : !$store.app.sidebar}"
+        @click="$store.app.toggleSidebar()"></div>
+
+    <!-- start theme customizer section
+    <div x-data="customizer">
+        <div class="fixed inset-0 z-[51] hidden bg-[black]/60 px-4 transition-[display]"
+            :class="{'!block': showCustomizer}" @click="showCustomizer = false"></div>
+
+        <nav class="fixed bottom-0 top-0 z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 ltr:-right-[400px] rtl:-left-[400px] dark:bg-[#0e1726]"
+            :class="{'ltr:!right-0 rtl:!left-0' : showCustomizer}">
+            <a href="javascript:;"
+                class="absolute bottom-0 top-0 my-auto flex h-10 w-12 cursor-pointer items-center justify-center bg-primary text-white ltr:-left-12 ltr:rounded-bl-full ltr:rounded-tl-full rtl:-right-12 rtl:rounded-br-full rtl:rounded-tr-full"
+                @click="showCustomizer = !showCustomizer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 animate-[spin_3s_linear_infinite]">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
+                    <path opacity="0.5"
+                        d="M13.7654 2.15224C13.3978 2 12.9319 2 12 2C11.0681 2 10.6022 2 10.2346 2.15224C9.74457 2.35523 9.35522 2.74458 9.15223 3.23463C9.05957 3.45834 9.0233 3.7185 9.00911 4.09799C8.98826 4.65568 8.70226 5.17189 8.21894 5.45093C7.73564 5.72996 7.14559 5.71954 6.65219 5.45876C6.31645 5.2813 6.07301 5.18262 5.83294 5.15102C5.30704 5.08178 4.77518 5.22429 4.35436 5.5472C4.03874 5.78938 3.80577 6.1929 3.33983 6.99993C2.87389 7.80697 2.64092 8.21048 2.58899 8.60491C2.51976 9.1308 2.66227 9.66266 2.98518 10.0835C3.13256 10.2756 3.3397 10.437 3.66119 10.639C4.1338 10.936 4.43789 11.4419 4.43786 12C4.43783 12.5581 4.13375 13.0639 3.66118 13.3608C3.33965 13.5629 3.13248 13.7244 2.98508 13.9165C2.66217 14.3373 2.51966 14.8691 2.5889 15.395C2.64082 15.7894 2.87379 16.193 3.33973 17C3.80568 17.807 4.03865 18.2106 4.35426 18.4527C4.77508 18.7756 5.30694 18.9181 5.83284 18.8489C6.07289 18.8173 6.31632 18.7186 6.65204 18.5412C7.14547 18.2804 7.73556 18.27 8.2189 18.549C8.70224 18.8281 8.98826 19.3443 9.00911 19.9021C9.02331 20.2815 9.05957 20.5417 9.15223 20.7654C9.35522 21.2554 9.74457 21.6448 10.2346 21.8478C10.6022 22 11.0681 22 12 22C12.9319 22 13.3978 22 13.7654 21.8478C14.2554 21.6448 14.6448 21.2554 14.8477 20.7654C14.9404 20.5417 14.9767 20.2815 14.9909 19.902C15.0117 19.3443 15.2977 18.8281 15.781 18.549C16.2643 18.2699 16.8544 18.2804 17.3479 18.5412C17.6836 18.7186 17.927 18.8172 18.167 18.8488C18.6929 18.9181 19.2248 18.7756 19.6456 18.4527C19.9612 18.2105 20.1942 17.807 20.6601 16.9999C21.1261 16.1929 21.3591 15.7894 21.411 15.395C21.4802 14.8691 21.3377 14.3372 21.0148 13.9164C20.8674 13.7243 20.6602 13.5628 20.3387 13.3608C19.8662 13.0639 19.5621 12.558 19.5621 11.9999C19.5621 11.4418 19.8662 10.9361 20.3387 10.6392C20.6603 10.4371 20.8675 10.2757 21.0149 10.0835C21.3378 9.66273 21.4803 9.13087 21.4111 8.60497C21.3592 8.21055 21.1262 7.80703 20.6602 7C20.1943 6.19297 19.9613 5.78945 19.6457 5.54727C19.2249 5.22436 18.693 5.08185 18.1671 5.15109C17.9271 5.18269 17.6837 5.28136 17.3479 5.4588C16.8545 5.71959 16.2644 5.73002 15.7811 5.45096C15.2977 5.17191 15.0117 4.65566 14.9909 4.09794C14.9767 3.71848 14.9404 3.45833 14.8477 3.23463C14.6448 2.74458 14.2554 2.35523 13.7654 2.15224Z"
+                        stroke="currentColor" stroke-width="1.5" />
+                </svg>
+            </a>
+            <div class="perfect-scrollbar h-full overflow-y-auto overflow-x-hidden">
+
+                save Sheds
+
+            </div>
+        </nav>
+    </div> -->
+    <!-- end theme customizer section -->
+
+    <div class="main-container min-h-screen text-black dark:text-white-dark" :class="[$store.app.navbar]">
+        <!-- start sidebar section -->
+        <!-- <div :class="{'dark text-white-dark' : $store.app.semidark}">
+                <nav
+                    x-data="sidebar"
+                    class="sidebar fixed bottom-0 top-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300"
+                >
+                    <div class="h-full bg-white dark:bg-[#0e1726]">
+                        <div class="flex items-center justify-between px-4 py-3">
+                            <a href="index.html" class="main-logo flex shrink-0 items-center">
+                                <img class="ml-[5px] w-8 flex-none" src="assets/images/logo.png" alt="image" />
+                                <span class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline"></span>
+                            </a>
+                            <a
+                                href="javascript:;"
+                                class="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180 dark:text-white-light dark:hover:bg-dark-light/10"
+                                @click="$store.app.toggleSidebar()"
+                            >
+                                <svg class="m-auto h-5 w-5" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 19L7 12L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        opacity="0.5"
+                                        d="M16.9998 19L10.9998 12L16.9998 5"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                        <ul
+                            class="perfect-scrollbar relative h-[calc(100vh-80px)] space-y-0.5 overflow-y-auto overflow-x-hidden p-4 py-0 font-semibold"
+                            x-data="{ activeDropdown: 'dashboard' }"
+                        >
+                            <li class="menu nav-item">
+                                <button
+                                    type="button"
+                                    class="nav-link group"
+                                    :class="{'active' : activeDropdown === 'dashboard'}"
+                                    @click="activeDropdown === 'dashboard' ? activeDropdown = null : activeDropdown = 'dashboard'"
+                                >
+                                    <div class="flex items-center">
+                                        <svg
+                                            class="shrink-0 group-hover:!text-primary"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                opacity="0.5"
+                                                d="M2 12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274C22 8.77128 22 9.91549 22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039Z"
+                                                fill="currentColor"
+                                            />
+                                            <path
+                                                d="M9 17.25C8.58579 17.25 8.25 17.5858 8.25 18C8.25 18.4142 8.58579 18.75 9 18.75H15C15.4142 18.75 15.75 18.4142 15.75 18C15.75 17.5858 15.4142 17.25 15 17.25H9Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+
+                                        <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">Dashboard</span>
+                                    </div>
+                                    <div class="rtl:rotate-180" :class="{'!rotate-90' : activeDropdown === 'dashboard'}">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 5L15 12L9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </button>
+                                <ul x-cloak x-show="activeDropdown === 'dashboard'" x-collapse class="sub-menu text-gray-500">
+                                    <li>
+                                        <button>Size</button>
+                                    </li>
+                                    <li>
+                                        <a href="index.html" class="active">Sales</a>
+                                    </li>
+                                    <li>
+                                        <a href="analytics.html">Analytics</a>
+                                    </li>
+                                    <li>
+                                        <a href="finance.html">Finance</a>
+                                    </li>
+                                    <li>
+                                        <a href="crypto.html">Crypto</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <h2 class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                                <svg
+                                    class="hidden h-5 w-4 flex-none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                <span>Apps</span>
+                            </h2>
+
+                            <li class="nav-item">
+                                <ul>
+                                   
+                                    <li class="nav-item">
+                                        <a href="apps-notes.html" class="group">
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="shrink-0 group-hover:!text-primary"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        opacity="0.5"
+                                                        d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M7.25 8C7.25 7.58579 7.58579 7.25 8 7.25H16C16.4142 7.25 16.75 7.58579 16.75 8C16.75 8.41421 16.4142 8.75 16 8.75H8C7.58579 8.75 7.25 8.41421 7.25 8Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M7.25 16C7.25 15.5858 7.58579 15.25 8 15.25H13C13.4142 15.25 13.75 15.5858 13.75 16C13.75 16.4142 13.4142 16.75 13 16.75H8C7.58579 16.75 7.25 16.4142 7.25 16Z"
+                                                        fill="currentColor"
+                                                    />
+                                                </svg>
+                                                <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">Notes</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="apps-scrumboard.html" class="group">
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="shrink-0 group-hover:!text-primary"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        opacity="0.5"
+                                                        d="M21 15.9983V9.99826C21 7.16983 21 5.75562 20.1213 4.87694C19.3529 4.10856 18.175 4.01211 16 4H8C5.82497 4.01211 4.64706 4.10856 3.87868 4.87694C3 5.75562 3 7.16983 3 9.99826V15.9983C3 18.8267 3 20.2409 3.87868 21.1196C4.75736 21.9983 6.17157 21.9983 9 21.9983H15C17.8284 21.9983 19.2426 21.9983 20.1213 21.1196C21 20.2409 21 18.8267 21 15.9983Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        d="M8 3.5C8 2.67157 8.67157 2 9.5 2H14.5C15.3284 2 16 2.67157 16 3.5V4.5C16 5.32843 15.3284 6 14.5 6H9.5C8.67157 6 8 5.32843 8 4.5V3.5Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M12 9.25C12.4142 9.25 12.75 9.58579 12.75 10V12.25L15 12.25C15.4142 12.25 15.75 12.5858 15.75 13C15.75 13.4142 15.4142 13.75 15 13.75L12.75 13.75L12.75 16C12.75 16.4142 12.4142 16.75 12 16.75C11.5858 16.75 11.25 16.4142 11.25 16L11.25 13.75H9C8.58579 13.75 8.25 13.4142 8.25 13C8.25 12.5858 8.58579 12.25 9 12.25L11.25 12.25L11.25 10C11.25 9.58579 11.5858 9.25 12 9.25Z"
+                                                        fill="currentColor"
+                                                    />
+                                                </svg>
+                                                <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark"
+                                                    >Scrumboard</span
+                                                >
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="apps-contacts.html" class="group">
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="shrink-0 group-hover:!text-primary"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        opacity="0.5"
+                                                        d="M19.7165 20.3624C21.143 19.5846 22 18.5873 22 17.5C22 16.3475 21.0372 15.2961 19.4537 14.5C17.6226 13.5794 14.9617 13 12 13C9.03833 13 6.37738 13.5794 4.54631 14.5C2.96285 15.2961 2 16.3475 2 17.5C2 18.6525 2.96285 19.7039 4.54631 20.5C6.37738 21.4206 9.03833 22 12 22C15.1066 22 17.8823 21.3625 19.7165 20.3624Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M5 8.51464C5 4.9167 8.13401 2 12 2C15.866 2 19 4.9167 19 8.51464C19 12.0844 16.7658 16.2499 13.2801 17.7396C12.4675 18.0868 11.5325 18.0868 10.7199 17.7396C7.23416 16.2499 5 12.0844 5 8.51464ZM12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11Z"
+                                                        fill="currentColor"
+                                                    />
+                                                </svg>
+
+                                                <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">Contacts</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="menu nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link group"
+                                            :class="{'active' : activeDropdown === 'invoice'}"
+                                            @click="activeDropdown === 'invoice' ? activeDropdown = null : activeDropdown = 'invoice'"
+                                        >
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="shrink-0 group-hover:!text-primary"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        opacity="0.5"
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M12 5.25C12.4142 5.25 12.75 5.58579 12.75 6V6.31673C14.3804 6.60867 15.75 7.83361 15.75 9.5C15.75 9.91421 15.4142 10.25 15 10.25C14.5858 10.25 14.25 9.91421 14.25 9.5C14.25 8.82154 13.6859 8.10339 12.75 7.84748V11.3167C14.3804 11.6087 15.75 12.8336 15.75 14.5C15.75 16.1664 14.3804 17.3913 12.75 17.6833V18C12.75 18.4142 12.4142 18.75 12 18.75C11.5858 18.75 11.25 18.4142 11.25 18V17.6833C9.61957 17.3913 8.25 16.1664 8.25 14.5C8.25 14.0858 8.58579 13.75 9 13.75C9.41421 13.75 9.75 14.0858 9.75 14.5C9.75 15.1785 10.3141 15.8966 11.25 16.1525V12.6833C9.61957 12.3913 8.25 11.1664 8.25 9.5C8.25 7.83361 9.61957 6.60867 11.25 6.31673V6C11.25 5.58579 11.5858 5.25 12 5.25ZM11.25 7.84748C10.3141 8.10339 9.75 8.82154 9.75 9.5C9.75 10.1785 10.3141 10.8966 11.25 11.1525V7.84748ZM14.25 14.5C14.25 13.8215 13.6859 13.1034 12.75 12.8475V16.1525C13.6859 15.8966 14.25 15.1785 14.25 14.5Z"
+                                                        fill="currentColor"
+                                                    />
+                                                </svg>
+                                                <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">Invoice</span>
+                                            </div>
+                                            <div class="rtl:rotate-180" :class="{'!rotate-90' : activeDropdown === 'invoice'}">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9 5L15 12L9 19"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <ul x-cloak x-show="activeDropdown === 'invoice'" x-collapse class="sub-menu text-gray-500">
+                                            <li>
+                                                <a href="apps-invoice-list.html">List</a>
+                                            </li>
+                                            <li>
+                                                <a href="apps-invoice-preview.html">Preview</a>
+                                            </li>
+                                            <li>
+                                                <a href="apps-invoice-add.html">Add</a>
+                                            </li>
+                                            <li>
+                                                <a href="apps-invoice-edit.html">Edit</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="apps-calendar.html" class="group">
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="shrink-0 group-hover:!text-primary"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M6.94028 2C7.35614 2 7.69326 2.32421 7.69326 2.72414V4.18487C8.36117 4.17241 9.10983 4.17241 9.95219 4.17241H13.9681C14.8104 4.17241 15.5591 4.17241 16.227 4.18487V2.72414C16.227 2.32421 16.5641 2 16.98 2C17.3958 2 17.733 2.32421 17.733 2.72414V4.24894C19.178 4.36022 20.1267 4.63333 20.8236 5.30359C21.5206 5.97385 21.8046 6.88616 21.9203 8.27586L22 9H2.92456H2V8.27586C2.11571 6.88616 2.3997 5.97385 3.09665 5.30359C3.79361 4.63333 4.74226 4.36022 6.1873 4.24894V2.72414C6.1873 2.32421 6.52442 2 6.94028 2Z"
+                                                        fill="currentColor"
+                                                    />
+                                                    <path
+                                                        opacity="0.5"
+                                                        d="M21.9995 14.0001V12.0001C21.9995 11.161 21.9963 9.66527 21.9834 9H2.00917C1.99626 9.66527 1.99953 11.161 1.99953 12.0001V14.0001C1.99953 17.7713 1.99953 19.6569 3.1711 20.8285C4.34267 22.0001 6.22829 22.0001 9.99953 22.0001H13.9995C17.7708 22.0001 19.6564 22.0001 20.828 20.8285C21.9995 19.6569 21.9995 17.7713 21.9995 14.0001Z"
+                                                        fill="currentColor"
+                                                    />
+                                                </svg>
+                                                <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">Calendar</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                          
+                           
+                            </ul>
+                    </div>
+                </nav>
+            </div> -->
+        <!-- end sidebar section -->
+
+        <div class="main-content flex min-h-screen flex-col">
+            <!-- start header section -->
+            <header class="z-40" :class="{'dark' : $store.app.semidark && $store.app.menu === 'vertical' z-50}">
+                <div class="shadow-sm">
+                    <div class="relative flex w-full items-center bg-white px-5 py-2.5 dark:bg-[#0e1726]">
+                        <div 
+                        style="
+                            padding: 5px 15px; 
+                            background-color: #f0f4ff; 
+                            color: #333; 
+                            font-family: Arial, sans-serif; 
+                            font-size: 13px; 
+                            display: flex; 
+                            flex-direction: row; 
+                            align-items: center; 
+                            justify-content: space-between; 
+                            border-bottom: 1px solid #4a90e2;" 
+                        class="tips-container"
+                    >
+                        <span style="color: #4a90e2; font-weight: bold; margin-right: 10px;">Tips:</span>
+                        <div style="display: flex; gap: 15px; flex: 1;">
+                            <span>⚡ <strong>Zooming:</strong> Use the trackpad or scroll wheel to zoom.</span>
+                            <span>⚡ <strong>Camera Controls:</strong> Click and drag or use arrow keys to move.</span>
+                        </div>
+                    </div>
+                    
+                        
+                                                                        
+                        <div class="horizontal-logo flex items-center justify-between ltr:mr-2 rtl:ml-2 lg:hidden">
+                            <a href="index.html" class="main-logo flex shrink-0 items-center">
+                                <img class="inline w-8 ltr:-ml-1 rtl:-mr-1" src="assets/images/logo.png" alt="image" />
+                                <span
+                                    class="hidden align-middle text-2xl font-semibold transition-all duration-300 ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light md:inline">Rando</span>
+                            </a>
+
+                            <a href="javascript:;"
+                                class="collapse-icon flex flex-none rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary ltr:ml-2 rtl:mr-2 dark:bg-dark/40 dark:text-[#d0d2d6] dark:hover:bg-dark/60 dark:hover:text-primary lg:hidden"
+                                @click="$store.app.toggleSidebar()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 7L4 7" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                    <path opacity="0.5" d="M20 12L4 12" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                    <path d="M20 17L4 17" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hidden ltr:mr-2 rtl:ml-2 sm:block">
+
+                        </div>
+                        <div x-data="header"
+                            class="flex items-center space-x-1.5 ltr:ml-auto rtl:mr-auto rtl:space-x-reverse dark:text-[#d0d2d6] sm:flex-1 ltr:sm:ml-0 sm:rtl:mr-0 lg:space-x-2">
+                            <div class="sm:ltr:mr-auto sm:rtl:ml-auto" x-data="{ search: false }"
+                                @click.outside="search = false">
+                                <form
+                                    class="absolute inset-x-0 top-1/2 z-10 mx-4 hidden -translate-y-1/2 sm:relative sm:top-0 sm:mx-0 sm:block sm:translate-y-0"
+                                    :class="{'!block' : search}" @submit.prevent="search = false">
+                                </form>
+                                <button type="button"
+                                    class="search_btn rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 dark:bg-dark/40 dark:hover:bg-dark/60 sm:hidden"
+                                    @click="search = ! search">
+                                    <svg class="mx-auto h-4.5 w-4.5 dark:text-[#d0d2d6]" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11.5" cy="11.5" r="9.5" stroke="currentColor" stroke-width="1.5"
+                                            opacity="0.5" />
+                                        <path d="M18.5 18.5L22 22" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggle">
+                                    <span class="dropdown-text">Camera Type
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            style="fill: #555;height: 12px;margin-left: 5px;">
+                                            <path
+                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul id="cam-dropdown" x-cloak x-show="open" x-transition x-transition.duration.300ms @click.outside="open = false"
+                                    class="top-11 w-[100px] !py-0 text-xs text-dark ltr:-right-16 rtl:-left-16 dark:text-white-dark sm:w-[100px] sm:ltr:-right-2 sm:rtl:-left-2 dropdown">
+                                    <li>
+                                        <a href="#" class="text-sm" @click="change_Cam_Angle('Rotate')" @click.outside="open = false">Rotate</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" @click="change_Cam_Angle('Pan')" @click.outside="open = false">Pan</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggle">
+                                    <span class="dropdown-text">Slab Settings
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            style="fill: #555;height: 12px;margin-left: 5px;">
+                                            <path
+                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul id="slab-dropdown" x-cloak x-show="open" x-transition x-transition.duration.300ms @click.outside="open = false"
+                                    class="top-11 w-[100px] !py-0 text-xs text-dark ltr:-right-16 rtl:-left-16 dark:text-white-dark sm:w-[100px] sm:ltr:-right-2 sm:rtl:-left-2 dropdown">
+                                    <li>
+                                        <a href="#" class="text-sm" @click="slab_property('Enable')" @click.outside="open = false">Enable</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" @click="slab_property('Disable')" @click.outside="open = false">Disable</a>
+                                    </li>
+                                    <li x-data="{ 
+                                        slabSize: 150, 
+                                        updateSlabSize(size) { 
+                                            localStorage.setItem('slabSize', size);
+                                        } 
+                                    }" 
+                                    class="flex flex-col space-y-1"
+                                >
+                                        <label for="slab-size" class="text-sm">Slab Size: </label>
+                                        <input type="range" id="slab-size" x-model="slabSize" min="0" max="200" class="slider w-full" @input="updateSlabSize(slabSize)">
+                                        <span class="text-sm" x-text="`${slabSize} mm`"></span>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggle">
+                                    <span class="dropdown-text">Type
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            style="fill: #555;height: 12px;margin-left: 5px;">
+                                            <path
+                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul id="type-dropdown" x-cloak x-show="open" x-transition x-transition.duration.300ms @click.outside="open = false"
+                                    class="top-11 w-[150px] !py-0 text-xs text-dark ltr:-right-16 rtl:-left-16 dark:text-white-dark sm:w-[150px] sm:ltr:-right-2 sm:rtl:-left-2 dropdown">
+                                    <li>
+                                        <a href="#" class="text-sm" @click="change_type('3D')" @click.outside="open = false">3D</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" @click="change_type('Plan')" @click.outside="open = false">Elevation/Section</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" @click="change_type('Floor')" @click.outside="open = false">Plan</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <!-- <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggle">
+                                    <span class="dropdown-text">Edit
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            style="fill: #555;height: 12px;margin-left: 5px;">
+                                            <path
+                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul id="edit-dropdown" x-cloak x-show="open" x-transition x-transition.duration.300ms @click.outside="open = false"
+                                    class="top-11 w-[100px] !py-0 text-xs text-dark ltr:-right-16 rtl:-left-16 dark:text-white-dark sm:w-[100px] sm:ltr:-right-2 sm:rtl:-left-2 dropdown">
+                                    <li>
+                                        <a href="#" class="text-sm" @click="Edit_Options('Creating New Shed')" @click.outside="open = false">New</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" id="Load" @click="Edit_Options('Loading Existing Shed')" @click.outside="open = false">Load</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" id="Save" @click="Edit_Options('Saving Current Shed')" @click.outside="open = false">Save</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-sm" id="Share" @click="Edit_Options('Sharing Shed Created')" @click.outside="open = false">Share</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+
+
+                            <!-- <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggle">
+                                    <span class="dropdown-text">Views
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            style="fill: #555;height: 12px;margin-left: 5px;">
+                                            <path
+                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul id="views-dropdown" x-cloak x-show="open" x-transition x-transition.duration.300ms @click.outside="open = false"
+                                    class="top-11 w-[230px] !py-0 text-xs text-dark ltr:-right-16 rtl:-left-16 dark:text-white-dark sm:w-[280px] sm:ltr:-right-2 sm:rtl:-left-2">
+                                    <li>
+                                        <a href="#">
+                                            <label>
+                                                <input type="checkbox" value="Normal" onclick="selectOption('Normal')"
+                                                    class="views-input" /> Normal
+                                            </label>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a class="option-link" href="#">
+                                            <label>
+                                                <input type="checkbox" value="Transparent"
+                                                    onclick="selectOption('Transparent')" class="views-input" />
+                                                Transparent
+                                            </label>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <label>
+                                                <input type="checkbox" value="Structure Only"
+                                                    onclick="selectOption('Structure Only')" class="views-input" />
+                                                Structure Only
+                                            </label>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <label>
+                                                <input type="checkbox" value="Insulation Only"
+                                                    onclick="selectOption('Insulation Only')" class="views-input" />
+                                                Insulation Only
+                                            </label>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded bg-white-light/40 p-auto m-auto hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    @click="toggleQuote">
+                                    Get a Quote
+                                </a>
+                            </div>
+
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;"
+                                    class="block rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    data-tooltip-anchor="bottom" data-tooltip="Full screen"
+                                    onclick="toggleFullScreen()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        style="fill: #444;">
+                                        <path d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;" id="export_image"
+                                    class="block rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    data-tooltip-anchor="bottom" data-tooltip="Export Image">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        style="fill: #444;">
+                                        <circle cx="7.499" cy="9.5" r="1.5"></circle>
+                                        <path d="m10.499 14-1.5-2-3 4h12l-4.5-6z"></path>
+                                        <path
+                                            d="M19.999 4h-16c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm-16 14V6h16l.002 12H3.999z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="dropdown" x-data="dropdown" @click.outside="open = false">
+                                <a href="javascript:;" id="export"
+                                    class="block rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                                    data-tooltip-anchor="bottom" data-tooltip="Export PDF">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        style="fill: #444;">
+                                        <path
+                                            d="M19 7h-1V2H6v5H5c-1.654 0-3 1.346-3 3v7c0 1.103.897 2 2 2h2v3h12v-3h2c1.103 0 2-.897 2-2v-7c0-1.654-1.346-3-3-3zM8 4h8v3H8V4zm8 16H8v-4h8v4zm4-3h-2v-3H6v3H4v-7c0-.551.449-1 1-1h14c.552 0 1 .449 1 1v7z">
+                                        </path>
+                                        <path d="M14 10h4v2h-4z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <!-- end header section -->
+            <div id="root"></div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="/assets/js/alpine-collaspe.min.js"></script>
+    <script src="/assets/js/alpine-persist.min.js"></script>
+    <script defer src="/assets/js/alpine-ui.min.js"></script>
+    <script defer src="/assets/js/alpine-focus.min.js"></script>
+    <script defer src="/assets/js/alpine.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <!-- <script defer src="assets/js/apexcharts.js"></script> -->
+
+
+</body>
+
+</html>

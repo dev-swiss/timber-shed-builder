@@ -1,0 +1,88 @@
+.metal-sliding-door-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    background-color: #EBEBEB;
+    color: #000;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+    transition: width 0.3s ease;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .metal-sliding-door-headings {
+    display: flex;
+    width: 80px;
+    font-size: 14px;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    padding-left: 2px;
+    text-align: left;
+  }
+  
+  .field-box {
+    margin: 10px 0;
+  }
+  
+  .range-box {
+    display: flex;
+    height: 10px;
+    padding: 10px;
+  }
+  
+  .sizeInput {
+    display: block;
+    height: 100%;
+    font-weight: bold;
+    border-radius: 2%;
+    text-align: center;
+    border: 2px solid #000;
+  }
+  
+  .metal-sliding-door {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    padding: 5px;
+    border: 1px solid black;
+    gap: 5px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .metal-sliding-door svg {
+    font-size: 5rem;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .metal-sliding-door svg:hover {
+    color: #555;
+  }
+  
+  button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

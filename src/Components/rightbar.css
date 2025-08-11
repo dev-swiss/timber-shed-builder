@@ -1,0 +1,59 @@
+/* rightbar.css */
+.right-sidebar {
+    position: fixed;
+    top: 12%;
+    right: 0;
+    height: 70%;
+    width: 50px !important; /* Initial hidden width */
+    overflow-x: hidden;
+    transition: width 0.3s, left 0.3s;
+    z-index: 1000;
+    left: 97% !important;
+  }
+  
+  .right-sidebar.hovered {
+    width: 300px !important;
+    right: auto !important; /* Allow the sidebar to expand leftwards */
+    left: calc(100% - 300px) !important;
+  }
+  
+  .scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    /* optional padding */
+  }
+  
+  .opening-details {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .hide-item {
+    display: none !important;
+  }
+  
+  .right-sidebar .properties {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .right-sidebar:hover .properties {
+    opacity: 1;
+    visibility: visible;
+  }
+  .lock-button {
+    position: absolute;
+    top: 5px;
+    left: 90px;
+    z-index: 2000;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .lock-button:hover {
+    background-color: #ddd;
+  }
+  

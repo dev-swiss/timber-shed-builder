@@ -1,0 +1,587 @@
+{
+  "1": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.0872665],
+      "position": {"y": 0.23, "x": 0.24},
+      "scaling": {"x": 1.025}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.0872665],
+      "position": {"y": 0.23, "x": -0.24},
+      "scaling": {"x": 1.025}
+    },
+    "topCenter" : 0.55 
+  },
+  "2": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.10472],
+      "position": {"y": 0.28, "x": 0.29},
+      "scaling": {"x": 1.030}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.10472],
+      "position": {"y": 0.28, "x": -0.29},
+      "scaling": {"x": 1.030}
+    },
+    "topCenter" : 0.60 
+  },
+  "3": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.122173],
+      "position": {"y": 0.32, "x": 0.34},
+      "scaling": {"x": 1.035}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.122173],
+      "position": {"y": 0.32, "x": -0.34},
+      "scaling": {"x": 1.035}
+    },
+    "topCenter" : 0.65 
+  },
+  "4": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.139626],
+      "position": {"y": 0.39, "x": 0.38},
+      "scaling": {"x": 1.040}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.139626],
+      "position": {"y": 0.39, "x": -0.38},
+      "scaling": {"x": 1.040}
+    },
+    "topCenter" : 0.70 
+  },
+  "5": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.15708],
+      "position": {"y": 0.43, "x": 0.42},
+      "scaling": {"x": 1.045}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.15708],
+      "position": {"y": 0.43, "x": -0.42},
+      "scaling": {"x": 1.045}
+    },
+    "topCenter" : 0.75 
+  },
+  "6": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.174533],
+      "position": {"y": 0.48, "x": 0.47},
+      "scaling": {"x": 1.050}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.174533],
+      "position": {"y": 0.48, "x": -0.47},
+      "scaling": {"x": 1.050}
+    },
+    "topCenter" : 0.80 
+  },
+  "7": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.191986],
+      "position": {"y": 0.53, "x": 0.52},
+      "scaling": {"x": 1.055}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.191986],
+      "position": {"y": 0.53, "x": -0.52},
+      "scaling": {"x": 1.055}
+    },
+    "topCenter" : 0.85 
+  },
+  "8": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.20944],
+      "position": {"y": 0.60, "x": 0.57},
+      "scaling": {"x": 1.065}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.20944],
+      "position": {"y": 0.60, "x": -0.57},
+      "scaling": {"x": 1.065}
+    },
+    "topCenter" : 0.90 
+  },
+  "9": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.226893],
+      "position": {"y": 0.65, "x": 0.60},
+      "scaling": {"x": 1.065}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.226893],
+      "position": {"y": 0.65, "x": -0.60},
+      "scaling": {"x": 1.065}
+    },
+    "topCenter" : 0.95 
+  },
+  "10": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.244346],
+      "position": {"y": 0.70, "x": 0.65},
+      "scaling": {"x": 1.065}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.244346],
+      "position": {"y": 0.70, "x": -0.65},
+      "scaling": {"x": 1.065}
+    },
+    "topCenter" : 1.00 
+  },
+  "11": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.261799],
+      "position": {"y": 0.75, "x": 0.70},
+      "scaling": {"x": 1.085}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.261799],
+      "position": {"y": 0.75, "x": -0.70},
+      "scaling": {"x": 1.085}
+    },
+    "topCenter" : 1.05 
+  },
+  "12": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.279253],
+      "position": {"y": 0.80, "x": 0.75},
+      "scaling": {"x": 1.085}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.279253],
+      "position": {"y": 0.80, "x": -0.75},
+      "scaling": {"x": 1.085}
+    },
+    "topCenter" : 1.10 
+  },
+  "13": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.296706],
+      "position": {"y": 0.87, "x": 0.78},
+      "scaling": {"x": 1.085}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.296706],
+      "position": {"y": 0.87, "x": -0.78},
+      "scaling": {"x": 1.085}
+    },
+    "topCenter" : 1.15 
+  },
+  "14": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.314159],
+      "position": {"y": 0.94, "x": 0.83},
+      "scaling": {"x": 1.085}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.314159],
+      "position": {"y": 0.94, "x": -0.83},
+      "scaling": {"x": 1.085}
+    },
+    "topCenter" : 1.20 
+  },
+  "15": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.331613],
+      "position": {"y": 1.02, "x": 0.88},
+      "scaling": {"x": 1.095}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.331613],
+      "position": {"y": 1.02, "x": -0.88},
+      "scaling": {"x": 1.095}
+    },
+    "topCenter" : 1.25 
+  },
+  "16": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.349066],
+      "position": {"y": 1.07, "x": 0.91},
+      "scaling": {"x": 1.095}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.349066],
+      "position": {"y": 1.07, "x": -0.91},
+      "scaling": {"x": 1.095}
+    },
+    "topCenter" : 1.30 
+  },
+  "17": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.366519],
+      "position": {"y": 1.15, "x": 0.96},
+      "scaling": {"x": 1.12}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.366519],
+      "position": {"y": 1.15, "x": -0.96},
+      "scaling": {"x": 1.12}
+    },
+    "topCenter" : 1.35 
+  },
+  "18": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.383972],
+      "position": {"y": 1.20, "x": 1.00},
+      "scaling": {"x": 1.12}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.383972],
+      "position": {"y": 1.20, "x": -1.00},
+      "scaling": {"x": 1.12}
+    },
+    "topCenter" : 1.40 
+  },
+  "19": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.401426],
+      "position": {"y": 1.28, "x": 1.05},
+      "scaling": {"x": 1.13}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.401426],
+      "position": {"y": 1.28, "x": -1.05},
+      "scaling": {"x": 1.13}
+    },
+    "topCenter" : 1.45 
+  },
+  "20": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.418879],
+      "position": {"y": 1.36, "x": 1.09},
+      "scaling": {"x": 1.14}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.418879],
+      "position": {"y": 1.36, "x": -1.09},
+      "scaling": {"x": 1.14}
+    },
+    "topCenter" : 1.5 
+  },
+  "21": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.436332],
+      "position": {"y": 1.44, "x": 1.13},
+      "scaling": {"x": 1.16}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.436332],
+      "position": {"y": 1.44, "x": -1.13},
+      "scaling": {"x": 1.16}
+    },
+    "topCenter" : 1.55 
+  },
+  "22": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.453786],
+      "position": {"y": 1.52, "x": 1.18},
+      "scaling": {"x": 1.18}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.453786],
+      "position": {"y": 1.52, "x": -1.18},
+      "scaling": {"x": 1.18}
+    },
+    "topCenter" : 1.60 
+  },
+  "23": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.471239],
+      "position": {"y": 1.60, "x": 1.22},
+      "scaling": {"x": 1.19}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.471239],
+      "position": {"y": 1.60, "x": -1.22},
+      "scaling": {"x": 1.19}
+    },
+    "topCenter" : 1.65
+  },
+  "24": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.488692],
+      "position": {"y": 1.68, "x": 1.26},
+      "scaling": {"x": 1.19}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.488692],
+      "position": {"y": 1.68, "x": -1.26},
+      "scaling": {"x": 1.19}
+    },
+    "topCenter" : 1.70 
+  },
+  "25": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.506145],
+      "position": {"y": 1.76, "x": 1.30},
+      "scaling": {"x": 1.20}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.506145],
+      "position": {"y": 1.76, "x": -1.30},
+      "scaling": {"x": 1.20}
+    },
+    "topCenter" : 1.75 
+  },
+  "26": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.523599],
+      "position": {"y": 1.84, "x": 1.33},
+      "scaling": {"x": 1.21}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.523599],
+      "position": {"y": 1.84, "x": -1.33},
+      "scaling": {"x": 1.21}
+    },
+    "topCenter" : 1.80
+  },
+  "27": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.541052],
+      "position": {"y": 1.92, "x": 1.37},
+      "scaling": {"x": 1.22}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.541052],
+      "position": {"y": 1.92, "x": -1.37},
+      "scaling": {"x": 1.22}
+    },
+    "topCenter" : 1.85 
+  },
+  "28": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.558505],
+      "position": {"y": 2.00, "x": 1.41},
+      "scaling": {"x": 1.24}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.558505],
+      "position": {"y": 2.00, "x": -1.41},
+      "scaling": {"x": 1.24}
+    },
+    "topCenter" : 1.90 
+  },
+  "29": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.575959],
+      "position": {"y": 2.08, "x": 1.45},
+      "scaling": {"x": 1.26}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.575959],
+      "position": {"y": 2.08, "x": -1.45},
+      "scaling": {"x": 1.26}
+    },
+    "topCenter" : 1.95 
+  },
+  "30": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.593412],
+      "position": {"y": 2.16, "x": 1.49},
+      "scaling": {"x": 1.28}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.593412],
+      "position": {"y": 2.16, "x": -1.49},
+      "scaling": {"x": 1.28}
+    },
+    "topCenter" : 2.00 
+  },
+  "31": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.610865],
+      "position": {"y": 2.24, "x": 1.53},
+      "scaling": {"x": 1.29}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.610865],
+      "position": {"y": 2.24, "x": -1.53},
+      "scaling": {"x": 1.29}
+    },
+    "topCenter" : 2.05 
+  },
+  "32": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.628319],
+      "position": {"y": 2.32, "x": 1.57},
+      "scaling": {"x": 1.31}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.628319],
+      "position": {"y": 2.32, "x": -1.57},
+      "scaling": {"x": 1.31}
+    },
+    "topCenter" : 2.10 
+  },
+  "33": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.645772],
+      "position": {"y": 2.45, "x": 1.61},
+      "scaling": {"x": 1.32}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.645772],
+      "position": {"y": 2.45, "x": -1.61},
+      "scaling": {"x": 1.32}
+    },
+    "topCenter" : 2.20 
+  },
+  "34": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.663225],
+      "position": {"y": 2.57, "x": 1.65},
+      "scaling": {"x": 1.36}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.663225],
+      "position": {"y": 2.57, "x": -1.65},
+      "scaling": {"x": 1.36}
+    },
+    "topCenter" : 2.30 
+  },
+  "35": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.680678],
+      "position": {"y": 2.69, "x": 1.69},
+      "scaling": {"x": 1.37}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.680678],
+      "position": {"y": 2.69, "x": -1.69},
+      "scaling": {"x": 1.37}
+    },
+    "topCenter" : 2.40 
+  },
+  "36": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.698132],
+      "position": {"y": 2.80, "x": 1.71},
+      "scaling": {"x": 1.39}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.698132],
+      "position": {"y": 2.80, "x": -1.71},
+      "scaling": {"x": 1.39}
+    },
+    "topCenter" : 2.50 
+  },
+  "37": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.715585],
+      "position": {"y": 2.91, "x": 1.75},
+      "scaling": {"x": 1.42}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.715585],
+      "position": {"y": 2.91, "x": -1.75},
+      "scaling": {"x": 1.42}
+    },
+    "topCenter" : 2.60 
+  },
+  "38": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.733038],
+      "position": {"y": 3.02, "x": 1.78},
+      "scaling": {"x": 1.44}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.733038],
+      "position": {"y": 3.02, "x": -1.78},
+      "scaling": {"x": 1.44}
+    },
+    "topCenter" : 2.70 
+  },
+  "39": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.750492],
+      "position": {"y": 3.14, "x": 1.81},
+      "scaling": {"x": 1.46}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.750492],
+      "position": {"y": 3.14, "x": -1.81},
+      "scaling": {"x": 1.46}
+    },
+    "topCenter" : 2.80 
+  },
+  "40": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.767945],
+      "position": {"y": 3.26, "x": 1.84},
+      "scaling": {"x": 1.48}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.767945],
+      "position": {"y": 3.26, "x": -1.84},
+      "scaling": {"x": 1.48}
+    },
+    "topCenter" : 2.90 
+  },
+  "41": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.785398],
+      "position": {"y": 3.38, "x": 1.87},
+      "scaling": {"x": 1.53}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.785398],
+      "position": {"y": 3.38, "x": -1.87},
+      "scaling": {"x": 1.53}
+    },
+    "topCenter" : 3.00 
+  },
+  "42": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.802851],
+      "position": {"y": 3.50, "x": 1.90},
+      "scaling": {"x": 1.55}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.802851],
+      "position": {"y": 3.50, "x": -1.90},
+      "scaling": {"x": 1.55}
+    },
+    "topCenter" : 3.05 
+  },
+  "43": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.820305],
+      "position": {"y": 3.62, "x": 1.92},
+      "scaling": {"x": 1.56}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.820305],
+      "position": {"y": 3.62, "x": -1.92},
+      "scaling": {"x": 1.56}
+    },
+    "topCenter" : 3.10 
+  },
+  "44": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.837758],
+      "position": {"y": 3.70, "x": 1.96},
+      "scaling": {"x": 1.57}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.837758],
+      "position": {"y": 3.70, "x": -1.96},
+      "scaling": {"x": 1.57}
+    },
+    "topCenter" : 3.20 
+  },
+  "45": {
+    "rightRoofMesh": {
+      "rotation": [0, 0, 0.855211],
+      "position": {"y": 3.89, "x": 1.99},
+      "scaling": {"x": 1.65}
+    },
+    "leftRoofMesh": {
+      "rotation": [0, 0, -0.855211],
+      "position": {"y": 3.89, "x": -1.99},
+      "scaling": {"x": 1.65}
+    },
+    "topCenter" : 3.30 
+  }
+}

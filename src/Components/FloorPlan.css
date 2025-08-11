@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
+.floor-plan-big-container {
+    background: #f7f7f7;
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.floor-plan-medium-container {
+    width: auto;
+    min-width: 450px;
+    max-width: 1300px;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.floor-plan-left-side-container,
+.floor-plan-right-side-container {
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.floor-plan-left-side-container,
+.floor-plan-right-side-container,
+.floor-plan-center-container {
+
+    display: flex;
+    
+}
+
+.floor-plan-center-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+}
+
+.floor-plan-center-container .floor-plan-center-all-sizing-container {
+    display: flex;
+    width: 97%;
+    position: relative;
+}
+
+.floor-plan-left-side-size-container,
+.floor-plan-right-side-size-container {
+    width: 45px;
+    height: 77%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom {
+    width: 100%;left: 42%;
+    height: 34%;
+    border-left: 2px solid #000;
+}
+.floor-plan-right-side-size-container .floor-plan-right-side-size-top,
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom {
+    width: 100%;right: 42%;
+    height: 35%;
+    border-right: 2px solid #000;
+}
+
+
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top,
+.floor-plan-right-side-size-container .floor-plan-right-side-size-top,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom,
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size,
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-top-verticle-sizing,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing,
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-left-side,
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-right-side,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-left-side,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-right-side {
+    position: relative;
+}
+
+
+
+.floor-plan-left-side-size-container .floor-plan-left-size-size-text,
+.floor-plan-right-side-size-container .floor-plan-right-size-size-text {
+    transform: rotate(90deg);
+    text-align: center;
+}
+
+.floor-plan-right-size-size-text {
+    right: 1% !important;
+    left:1%;
+}
+
+.floor-plan-left-size-sizing-container,
+.floor-plan-right-size-sizing-container {
+    height: 100%;
+    display: flex;
+    margin: auto 0;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 50px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.floor-plan-left-side-awaings-size-container,
+.floor-plan-right-side-awaings-size-container {
+    position: absolute;
+    width: 60px;
+    height: 12px;
+    top: 80px;
+    font-size: 11px;
+    display: flex;
+    justify-content:center;
+}
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-text,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-text {
+    margin: 0;
+}
+
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-left-side,
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-right-side,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-left-side,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-right-side {
+  width: 35%;
+  border-bottom: 1px solid #000;
+}
+
+.floor-plan-left-side-awaings-container,
+.floor-plan-right-side-awaings-container {
+    width: 100%;
+    height: 90%;
+    background: #f8cccc;
+}
+
+/* .floor-plan-center-top-sizing-text-index-number{
+    position: relative;
+    left: 10px;
+} */
+
+
+.floor-plan-center-top-container,
+.floor-plan-center-bottom-container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid transparent;
+    align-items: center;
+    background: #f8cccc;
+    text-align: center;
+}
+
+.floor-plan-center-top-medium-container,
+.floor-plan-center-bottom-medium-container {
+    width: 100%;
+}
+
+.floor-plan-center-container .floor-plan-center-top-sizing,
+.floor-plan-center-container .floor-plan-center-bottom-sizing {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+
+
+
+.floor-plan-center-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size,
+.floor-plan-center-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size {
+    width: 25% ;
+    height: 15px;
+    border-top: 1.5px solid #000;
+}
+
+/* .floor-plan-center-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size,
+.floor-plan-center-container .floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size  {
+    border-left: 1.5px solid #000;
+} */
+
+/* .floor-plan-center-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size,
+.floor-plan-center-container .floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size {
+    border-right: 1.5px solid #000;
+} */
+
+.floor-plan-center-left-sizing-container {
+    position: absolute;
+    left: -74px;
+    top: 10px;
+    height: 70px;
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing  {
+  width: 100%;
+  height:32%;
+  border-left: 2px solid #000;
+}
+
+
+.floor-plan-center-top-verticle-sizing-text,
+.floor-plan-center-bottom-top-verticle-sizing-text {
+    font-size: 11px;
+    margin-bottom: 23px;
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%) rotate(90deg);
+    margin-top: 2px;
+}
+
+.floor-plan-center-top-verticle-sizing-text {
+    left: -6px;
+    
+}
+
+
+.floor-plan-center-container .floor-plan-center-main-container {
+    height: 60%;
+    width: 100%;
+    border: 2px solid red;
+    background: #f8cccc;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.floor-plan-center-bottom-left-sizing-container {
+    position: absolute;
+    right: -79px;
+    bottom: 15px;
+    height: 70px;
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-top-verticle-sizing,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing {
+    width: 100%;
+    height:32%;
+    border-right: 2px solid #000;
+} 
+
+
+.floor-plan-center-container .floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size,
+.floor-plan-center-container .floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size   {
+  width: 40%;
+  height: 15px;
+  border-bottom: 1px solid #000;
+}
+
+.floo-plan-center-top-left-awning-text,
+.floo-plan-center-top-right-awning-text {
+    font-weight: 900;
+}
+.rotated-text-only {
+    display: inline-block;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    font-weight: 900
+  }
+  .rotated-text-onlyb {
+    display: inline-block;
+    transform: rotate(90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    font-weight: 900
+  }
+.floor-plan-center-top-sizing-text,
+.floor-plan-center-bottom-sizing-text {
+  font-size: 11px;
+}
+
+
+.floor-plan-right-side-size-container .floor-plan-right-side-size-top::before,
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom::before,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top::before,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::before,
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing::before,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing::before,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:before,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-top-verticle-sizing::before {
+    font-family: "Segoe UI";
+    content: "/";
+    position: absolute;
+    top: -11px;
+    transform: rotate(68deg);
+    font-size: 20px;
+    font-weight: 300;
+    font-family: "Segoe UI";
+    right: -8px;
+}
+
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom::before,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::before,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing::before,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:before  {
+    bottom: -10px;
+    top: unset;
+}
+
+
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top::before,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::before,
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing::before,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:before {
+    left: -2px;
+    right: unset;
+}
+
+
+/* .floor-plan-right-side-size-container .floor-plan-right-side-size-top::after,
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom::after,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top::after,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::after,
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing::after,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing::after,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:after,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-top-verticle-sizing::after {
+    font-family: "Segoe UI";
+    content: "T";
+    position: absolute;
+    font-weight: 300;
+    bottom: 0;
+    font-size: 25px;
+    right: -5px;
+    top: -14px;
+    transform: rotate(53deg);
+} */
+
+.floor-plan-right-side-size-container .floor-plan-right-side-size-bottom::after,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::after,
+.floor-plan-center-bottom-left-sizing-container .floor-plan-center-bottom-bottom-verticle-sizing::after,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:after {
+    bottom: -14px;
+    top: unset;
+}
+
+.floor-plan-left-side-size-container .floor-plan-left-side-size-top::after,
+.floor-plan-left-side-size-container .floor-plan-left-side-size-bottom::after,
+.floor-plan-center-left-sizing-container .floor-plan-center-top-verticle-sizing::after,
+.floor-plan-center-left-sizing-container .floor-plan-center-bottom-verticle-sizing:after {
+    left: -5px;
+    right: unset;
+}
+/* ........................... */
+
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size::before,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size::before {
+    font-family: "Segoe UI";
+    content: "/";
+    position: absolute;
+    /* bottom: 0; */
+    transform: rotate(158deg);
+    font-size: 20px;
+    font-weight: 300;
+    left: -5px;
+    top: -15px;
+}
+
+
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size::before,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size::before,
+.floor-plan-center-all-sizing-container::before {
+    font-family: "Segoe UI";
+    content: "/";
+    position: absolute;
+    /* bottom: 0; */
+    transform: rotate(158deg);
+    font-size: 14px;
+    font-weight: 500;
+    left: -5px;
+    top: -15px;
+}
+
+
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size::before {
+    left: unset;
+    right: -5px;
+}
+
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size::before {
+    top: 7px;
+}
+
+/* .floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size::after,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size::after,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size::after,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size::after,
+.floor-plan-center-all-sizing-container::after {
+    font-family: "Segoe UI";
+    content: "T";
+    position: absolute;
+  
+    font-weight: 300;
+    font-size: 25px;
+    left: -5px;
+    top: -15px;
+    transform: rotate(155deg);
+} */
+
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size::after,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-right-size::before {
+    left: unset;
+    right: -3px;
+    top: -10px;
+}
+
+
+
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size::before,
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-left-size::after {
+    top: unset;
+    left: -4px;
+    top: -19px;
+}
+.floor-plan-center-bottom-sizing-left-size::before{
+    top: 7px !important;
+}
+.floor-plan-center-bottom-sizing .floor-plan-center-bottom-sizing-right-size::after {
+    top: unset;
+    right: -4px;
+    left: unset;
+}
+
+.floor-plan-center-all-sizing-container::before {
+    left: -2px;
+    top: -9px;
+}
+
+
+/* .floor-plan-center-all-sizing-container .floor-plan-center-top-sizing {
+    margin: 0 5px;
+} */
+
+
+.floor-plan-center-all-sizing-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size::before,
+.floor-plan-center-all-sizing-container .floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size::after {
+  left: -3px;
+  top: -10px;
+}
+
+
+
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size:nth-child(1)::before,
+.floor-plan-center-top-sizing .floor-plan-center-top-sizing-left-size:nth-child(1)::after {
+    display: none;
+} 
+
+
+.floor-plan-cener-top-sizing-text-container {
+    position: absolute;
+    left: 38%;
+    top: -30px;
+    width: 30%;
+    height: 10px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.floor-plan-center-main-container .floor-plan-left-side-size-container,
+.floor-plan-center-main-container .floor-plan-right-side-size-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+}
+
+.floor-plan-center-main-container .floor-plan-left-side-size-container {
+    left: -95px;
+}
+
+.floor-plan-center-main-container .floor-plan-right-side-size-container {
+    right: -100px;
+}
+
+
+.floor-plan-center-main-container .floor-plan-center-main-all-sizing-measurement-top-container,
+.floor-plan-center-main-container .floor-plan-center-main-all-sizing-measurement-bottom-container {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+   
+}
+/* 
+.floor-plan-center-main-all-sizing-measurement-top-container .floor-plan-center-main-each-measurment,
+.floor-plan-center-main-all-sizing-measurement-bottom-container .floor-plan-center-main-each-measurment {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 1px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+} */
+
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-left-side::before,
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-right-side::before,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-left-side::before,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-right-side::before {
+    content: "|";
+    position: absolute;
+    left: -1px;
+    top: 1px;
+}
+
+.floor-plan-left-side-awaings-size-container .floor-plan-awaings-sizing-right-side::before,
+.floor-plan-right-side-awaings-size-container .floor-plan-awaings-sizing-right-side::before {
+    left: unset;
+    right: -1px;
+}
+
+.floor-plan-center-main-container .floor-plan-center-main-all-sizing-measurement-top-container {
+    top: 5px;
+    width: 100%;
+}
+
+.floor-plan-center-main-container .floor-plan-center-main-all-sizing-measurement-bottom-container {
+    bottom: 5px;
+    width: 100%;
+}
+
+
+
+@media screen and (min-width: 1300px) {
+    .floor-plan-medium-container {
+        min-width: 550px;
+        width: 70%;
+        min-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .floor-plan-medium-container {
+        min-width: 700px;
+        width: 60%;
+        min-height: 500px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .floor-plan-medium-container {
+        min-width: 800px;
+        width: 50%;
+        min-height: 600px;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .floor-plan-medium-container {
+        min-width: 1000px;
+        width: 40%;
+        min-height: 700px;
+    }
+}
+
+@media screen and (min-width: 5120px) {
+    .floor-plan-medium-container {
+        min-width: 1200px;
+        width: 30%;
+        
+    }
+}
+.empty-placeholder {
+    width: 2%; /* Adjust width as necessary */
+    height: 100%; /* Adjust height as necessary */
+    visibility: hidden; /* Keeps the space but hides the content */
+  }
+
+  .floor-plan-center-main-each-measurement {
+   /* width: 133%; */
+   display: flex;
+   justify-content: flex-end;
+ 
+  }
+
+  .floor-plan-center-main-each-measurement:nth-child(1) {
+    justify-content: flex-start;
+  }
+
+
+.floor-plan-center-main-each-measurement .floor-plan-center-main-each-measurement-text {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 15px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.visible {
+    visibility: visible;
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }

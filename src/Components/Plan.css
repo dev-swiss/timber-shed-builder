@@ -1,0 +1,881 @@
+:root{
+  --bay-width: 235px;
+}
+.canvas-element{
+  background-color: black;
+}
+.Left-Front, .Right-Back, .heightcontainers, .heightcontainersfront, .heightcontainersfrontleft{
+  display: flex;
+  width: 95%;
+  height: 50%;
+  flex-direction: row;
+  justify-content: center;
+  place-items: center;
+}
+.heightcontainers, .heightcontainersfront, .heightcontainersfrontleft{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10%;
+  position: absolute;
+  right: 8vh;
+  top: 10.5vh;
+}
+.heightcontainersfront{
+  right:8vh;
+  top: 10.5vh;
+  height: 47%
+}
+.heightcontainersfrontleft{
+  left: 18%;
+  top: 10.5vh;
+  height: 50%;
+}
+
+
+.Left, .Right {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  justify-content: center; /* Align bays to the start of the container */
+  place-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  position: relative;
+}
+.Front, .Back{
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  width: 38%;
+  height: 100%;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+}
+.Triangle {
+ /* width: 70%; */
+  width: 59%;
+  height: 200px;
+  clip-path: polygon(47.9% 43.5%, 100% 100%, 0% 100%);
+  background-color: #acb3b2;
+  /* border-bottom: 40px solid #acb3b2;
+  border-right: 140px solid transparent;
+  border-left: 140px solid transparent; */
+}
+
+.Backbay{
+  display: flex;
+  width: 59%;
+  height:270px;
+  background-color: #acb3b2;
+  border: 2px solid #c7c6c5;
+  border-bottom: 0px;
+}
+.bays-holder{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  height: 50%;
+  justify-content: center;
+ 
+}
+.bay{
+  display: flex;
+  width: var(--bay-width);
+  height: 100%;
+  border: 2px solid #c7c6c5;
+  border-bottom: 0px;
+  background-color: #acb3b2;
+  justify-content: center;
+  align-items: center;
+}
+.shed {
+  display: flex;
+  align-items: center;
+  width: calc(var(--total-bays) * var(--bay-width) + 2px);
+  max-width: 85%;
+  height: 50px;
+  border: 2px solid #c7c6c5;
+  border-radius: 2%;
+  background-color: #acb3b2;
+  position: relative;
+}
+
+/* Media queries for various screen sizes */
+
+/* 1024px to 1219px */
+@media (min-width: 1024px) and (max-width: 1219px) {
+  /* Styles for small laptops */
+  .shed {
+    width: calc(var(--total-bays) * var(--bay-width) + 2px); /* Adjust width as needed */
+    max-width: 85%; /* Adjust max-width as needed */
+  }
+}
+
+/* 1220px to 1419px */
+@media (min-width: 1220px) and (max-width: 1419px) {
+  /* Styles for medium-small laptops */
+  .shed {
+    width: calc(var(--total-bays) * var(--bay-width) + -57px); /* Adjust width as needed */
+    max-width: 95%; /* Increase max-width if necessary */
+  }
+  .heightcontainersfrontleft{
+    margin-left: o;
+  }
+  .Left-Awnings {
+    position: relative;
+    bottom: 0;
+    /* left: -12px !important; */
+  }
+  .Right-Awnings{
+    position: relative;
+    bottom: 0;
+    /* left: 14px !important; */
+  }
+  .Left-Awningss {
+    position: relative;
+    bottom: 0;
+   /* left: -15px !important; */
+  }
+  .Right-Awningss {
+    position: relative;
+    bottom: 0;
+   /* left: 15px !important; */
+  }
+}
+
+/* 1420px to 1619px */
+@media (min-width: 1420px) and (max-width: 1619px) {
+  /* Styles for medium-large laptops */
+  .shed {
+    width: calc(var(--total-bays) * var(--bay-width) + 13px); /* Adjust width as needed */
+    max-width: 95%; /* Increase max-width if necessary */
+  }
+  .Left-Awnings {
+    position: relative;
+    bottom: 0;
+   /*  left: 14px !important; */
+  }
+}
+
+/* 1620px to 1819px */
+@media (min-width: 1620px) and (max-width: 1819px) {
+  /* Styles for large laptops */
+  .shed {
+    width: calc(var(--total-bays) * var(--bay-width) + 85px); /* Adjust width as needed */
+    max-width: 95%; /* Increase max-width if necessary */
+  }
+  .Left-Awnings {
+    position: relative;
+    bottom: 0;
+   /*  left: 14px !important; */
+  }
+}
+
+/* 1820px and above */
+@media (min-width: 1820px) {
+  /* Styles for extra-large laptops */
+  .shed {
+    width: calc(var(--total-bays) * var(--bay-width) + 120px); /* Adjust width as needed */
+    max-width: 95%; /* Increase max-width if necessary */
+  }
+  .Left-Awnings {
+    position: relative;
+    bottom: 0;
+   /*  left: 24px !important; */
+  }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  width: calc(var(--total-bays) * var(--bay-width) + 2px);
+  max-width: 9%;
+  height: 50px;
+  border: 2px solid #c7c6c5;
+  border-radius: 2%;
+  background-color: #acb3b2;
+  position: relative;
+ 
+}
+
+.back::after {
+  content: '';
+  position: absolute;
+  top: 95%; /* Adjust this value to change the length of the line */
+  left: 20%; /* Center the line horizontally */
+  transform: translateX(-50%);
+  width: 6px; /* Line width */
+  height: 175px; /* Line height, adjust as needed */
+  background-color: #acb3b2; /* Line color, matching the border color */
+}
+
+
+.front {
+  display: flex;
+  align-items: center;
+  width: calc(var(--total-bays) * var(--bay-width) + 2px);
+  max-width: 9%;
+  height: 50px;
+  border: 2px solid #c7c6c5;
+  border-radius: 2%;
+  background-color: #acb3b2;
+  position: relative;
+ 
+}
+
+.front::after {
+  content: '';
+  position: absolute;
+  top: 95%; /* Adjust this value to change the length of the line */
+  left: 80%; /* Center the line horizontally */
+  transform: translateX(-50%);
+  width: 6px; /* Line width */
+  height: 168px; /* Line height, adjust as needed */
+  background-color: #acb3b2; /* Line color, matching the border color */
+}
+
+
+
+.Length-Bar{
+  display: flex;
+  width: calc(var(--bay-width) * var(--total-bays) + 2px);
+  max-width: 86%;
+  height: fit-content;
+  margin-top: 10px;
+  margin-left: -8%;
+}
+.p1{
+  width: 50%;
+  height: 14px;
+  border-bottom: 2px solid black;
+  justify-content: center;
+  align-items: center;
+}
+.back-length{
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: fit-content;
+  margin-top: 10px;
+}
+
+.front-length{
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: fit-content;
+  margin-top: 22px;
+}
+
+
+.right-view-length {
+  display: flex;
+  flex-direction: row;
+  width: 4%;
+  height: fit-content;
+  position: absolute;
+  top: -11%; /* Adjust the percentage as needed */
+}
+
+
+.Left-Awnings {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  /* Adjust height as needed */
+  /* Creates space between Triangle and Left-Awnings */
+}
+
+.Left-Awnings .slant-line {
+  position: relative;
+  width: 27%;
+  margin-left: 210px;
+}
+
+.Left-Awnings .slant-line::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 4px; /* Adjust thickness here */
+  background-color: #acb3b2; /* Same color as the border */
+  transform: rotate(18deg);
+  transform-origin: left center;
+  top: 0;
+  left: 0;
+}
+
+.Left-Awnings .vertical-line {
+  position: absolute;
+  top: 18px;
+  left: 257px;
+  height: 155px; /* Adjust height as needed */
+  transform: translateX(-50%);
+}
+
+.Left-Awnings .vertical-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center it horizontally */
+  width: 4px; /* Adjust thickness here */
+  height: 90%; /* Match the height of the parent */
+  background-color: #acb3b2; /* Match the color */
+  transform: translateX(-50%);
+}
+
+.Left-Awningss {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  /* Adjust height as needed */
+  /* Creates space between Triangle and Left-Awnings */
+}
+
+.Left-Awningss .slant-line {
+  position: relative;
+  width: 27%;
+  margin-left: 210px;
+}
+
+.Left-Awningss .slant-line::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 4px; /* Adjust thickness here */
+  background-color: #acb3b2; /* Same color as the border */
+  transform: rotate(18deg);
+  transform-origin: left center;
+  top: 0;
+  left: 0;
+}
+
+.Left-Awningss .vertical-line {
+  position: absolute;
+  top: 18px;
+  left: 257px;
+  height: 155px; /* Adjust height as needed */
+  transform: translateX(-50%);
+}
+
+.Left-Awningss .vertical-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center it horizontally */
+  width: 4px; /* Adjust thickness here */
+  height: 90%; /* Match the height of the parent */
+  background-color: #acb3b2; /* Match the color */
+  transform: translateX(-50%);
+}
+
+.Right-Awnings {
+  position: relative;
+  /* Adjust height as needed */
+  /* Creates space between Triangle and Left-Awnings */
+ 
+}
+
+.Right-Awnings .rslant-line {
+  position: relative;
+  width: 27%;
+  margin-right: 350px; /* Decrease this value to move it towards the left */
+ 
+}
+
+.Right-Awnings .rslant-line::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px; /* Adjust thickness here */
+  background-color: #acb3b2; /* Same color as the border */
+  transform: rotate(157deg);
+  transform-origin: left center;
+  top: 0;
+  left: 0;
+}
+
+.Right-Awnings .rvertical-line {
+  position: absolute;
+  top: 19px;
+  left: -42px;
+  height: 155px; /* Adjust height as needed */
+  transform: translateX(-50%);
+}
+
+.Right-Awnings .rvertical-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center it horizontally */
+  width: 4px; /* Adjust thickness here */
+  height: 90%; /* Match the height of the parent */
+  background-color: #acb3b2; /* Match the color */
+  transform: translateX(-50%);
+}
+.Right-Awningss {
+  position: relative;
+  /* Adjust height as needed */
+  /* Creates space between Triangle and Left-Awnings */
+ 
+}
+
+.Right-Awningss .rslant-line {
+  position: relative;
+  width: 27%;
+  margin-right: 350px; /* Decrease this value to move it towards the left */
+ 
+}
+
+.Right-Awningss .rslant-line::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px; /* Adjust thickness here */
+  background-color: #acb3b2; /* Same color as the border */
+  transform: rotate(157deg);
+  transform-origin: left center;
+  top: 0;
+  left: 0;
+}
+
+.Right-Awningss .rvertical-line {
+  position: absolute;
+  top: 19px;
+  left: -42px;
+  height: 155px; /* Adjust height as needed */
+  transform: translateX(-50%);
+}
+
+.Right-Awningss .rvertical-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center it horizontally */
+  width: 4px; /* Adjust thickness here */
+  height: 90%; /* Match the height of the parent */
+  background-color: #acb3b2; /* Match the color */
+  transform: translateX(-50%);
+}
+
+
+.big-plan-container {
+  width: 102%;
+  height: 90vh;
+  margin: auto;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-plan-container .plan-medium-container {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.plan-medium-container .first-top-container,
+.plan-medium-container .second-bottom-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.plan-medium-container .second-bottom-container {
+  flex-direction: row-reverse;
+}
+
+.first-top-container .plan-left-container,
+.second-bottom-container .plan-left-container  {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.plan-left-container .left-top-container {
+  width: 100%;
+  height: 35px;
+  background: #adb3b3;
+  display: flex;
+
+}
+
+.left-top-container .left-center-container {
+width: 100%;
+height: 100%;
+
+}
+
+.left-top-container .left-left-small-container {
+  border-right: 1px solid #fff;
+  height: 100% !important;
+}
+
+.left-top-container .left-right-big-container {
+  border-left: 1px solid #fff;
+  height: 100% !important;
+  width: 10%;
+}
+
+.left-top-container .left-left-small-container,
+.left-top-container .left-right-small-container,
+.left-bottom-container .left-bottom-left-container,
+.left-bottom-container .left-bottom-right-container  {
+width: 10%;
+height: 100%;
+}
+
+.plan-left-container .left-bottom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+
+.left-bottom-container .left-bottom-left-container {
+  border-left: 4px solid #adb3b3;
+}
+
+.left-bottom-container .left-bottom-right-container {
+  border-right: 4px solid #adb3b3;
+}
+
+.left-bottom-container .left-bottom-right-container.no-border {
+  border-right: 8px solid transparent;
+}
+
+.left-bottom-container .left-bottom-left-container.no-border {
+  border-left: 8px solid transparent;
+}
+
+
+.left-bottom-container .left-bottom-center-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.left-bottom-center-container .left-bottom-center-top-boxes-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+
+.left-bottom-center-top-boxes-container  .left-bottom-each-box {
+background: #d9cfce;
+border: 1px solid #adb3b3;
+padding: 20px;
+height: 70px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.left-bottom-center-container .left-bottom-center-bottom-measurement-container {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -30px;
+}
+
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-left-side,
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-right-side  {
+ width: 75%;
+ height: 2px;
+ background: #000;
+ position: relative;
+}
+
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-left-side::before,
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-right-side::before,
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-left-sizing::before,
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-right-sizing::before {
+position: absolute;
+content: '|';
+top: -10px;
+left: -2px;
+font-size: 16px !important;
+font-weight: 300 !important;
+}
+
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-right-side::before,
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-right-sizing::before {
+  right: -2px;
+  left: unset;
+}
+
+.left-bottom-center-bottom-measurement-container .left-bottom-measurement-text,
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-text {
+  margin-top: 20px;
+  text-align: center;
+  line-height: 14px;
+  font-size: 12px;
+}
+
+.top-left-verticle-measurement-line {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 85%;
+}
+
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-left,
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-right {
+  width: 1px;
+  height: 35%;
+  background: #000;
+  position: relative;
+}
+
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-text,
+.front-plan-left-sizing .font-plan-left-sizing-text,
+.front-plan-right-sizing .font-plan-right-sizing-text {
+  transform: rotate(90deg);
+  margin-top: 10px;
+  margin-left: -20px;
+  font-size: 12px !important;
+}
+
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-left::before,
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-right::before,
+.plan-front-container .front-plan-left-top-verticle-measurenment-line::before,
+.plan-front-container .front-plan-left-bottom-verticle-measurenment-line::before,
+.plan-front-container .front-plan-right-top-verticle-measurenment-line::before,
+.plan-front-container .front-plan-right-bottom-verticle-measurenment-line::before {
+position: absolute;
+content: '|';
+font-weight: 300 !important;
+font-size: 16px !important;
+top: -9px;
+transform: rotate(90deg);
+
+}
+
+.top-left-verticle-measurement-line .top-left-verticle-measurement-line-right::before,
+.plan-front-container .front-plan-left-bottom-verticle-measurenment-line::before,
+.plan-front-container .front-plan-right-bottom-verticle-measurenment-line::before  {
+  top: unset;
+  bottom: -9px;
+}
+
+/************* front side ************/
+
+.first-top-container .plan-front-container,
+.second-bottom-container .plan-front-container {
+  width: 30%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.plan-front-container .front-plan-left-sizing,
+.plan-front-container .front-plan-right-sizing {
+  width: 7%;
+}
+
+
+.plan-front-container .front-plan-left-sizing {
+  left: -45px !important;
+}
+
+.plan-front-container .front-plan-home-container {
+  width: 86%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+.front-plan-home-container .front-plan-home-roof {
+  clip-path: polygon(51.7% 41%, 100% 100%, 0% 100%);
+  background:#acb3b2;
+  height: 80px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-plan-home-container .front-plan-home-structure-container {
+  background: #adb3b3;
+  height: 100px;
+  width: 80%;
+  position: relative;
+}
+.front-plan-home-structure-container .front-plan-home-left-side-bay,
+.front-plan-home-structure-container .front-plan-home-right-side-bay {
+    width: 150px;
+    height: 100px;
+    background: #adb3b3;
+    clip-path: polygon(0 21%, 35% 0, 35% 100%, 0% 110%);
+    margin-left: -52px;
+    position: relative;
+}
+
+.front-plan-home-structure-container .front-plan-home-left-side-bay::after,
+.front-plan-home-structure-container .front-plan-home-right-side-bay::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 99%;
+    left: 3px;
+    top: 2px;
+    background: #f7f7f7;
+    clip-path: polygon(0 21%, 35% 0, 35% 100%, 0% 110%);
+}
+
+.front-plan-home-structure-container .front-plan-home-right-side-bay {
+    transform: scaleX(-1);
+    float: right;
+    margin-right: -52px;
+    margin-top: -100px;
+}
+.front-plan-home-right-side-bay.no-top-margin {
+  margin-top: 0 !important;
+}
+.plan-front-container .front-plan-left-sizing,
+.plan-front-container .front-plan-right-sizing {
+  position: absolute;
+  width: 7%;
+  height: 80%;
+  left: -30px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index:1;
+}
+
+.plan-front-container .front-plan-right-sizing {
+  height: 55%;
+  left: unset;
+  right: -20px;
+}
+
+.plan-front-container .front-plan-left-top-verticle-measurenment-line,
+.plan-front-container .front-plan-left-bottom-verticle-measurenment-line,
+.plan-front-container .front-plan-right-top-verticle-measurenment-line,
+.plan-front-container .front-plan-right-bottom-verticle-measurenment-line {
+  width: 1px;
+  height: 30%;
+  background: #000;
+  position: relative;
+}
+
+.front-plan-home-structure-container .front-plan-home-bottom-sizing-container {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: -30px
+}
+
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-left-sizing,
+.front-plan-home-bottom-sizing-container .front-plan-home-bottom-right-sizing {
+width: 40%;
+height: 2px;
+background: #000;
+position: relative;
+}
+
+.front-plan-home-structure-container .front-plan-home-left-bay-measurement,
+.front-plan-home-structure-container .front-plan-home-right-bay-measurement {
+  position: absolute;
+  left: -40px;
+  bottom: -25px;
+  font-size: 11px !important;
+}
+
+.front-plan-home-structure-container .front-plan-home-right-bay-measurement {
+  left: unset;
+  right: -40px;
+}
+
+.front-plan-home-structure-container .front-plan-home-left-bay-measurement::before,
+.front-plan-home-structure-container .front-plan-home-right-bay-measurement::before,
+.left-bottom-container .left-bottom-left-measurement::before,
+.left-bottom-container .left-bottom-right-measurement::before {
+  content: "|";
+  position: absolute;
+  transform: rotate(90deg);
+  left: -8px;
+}
+
+
+.front-plan-home-structure-container .front-plan-home-left-bay-measurement::after,
+.front-plan-home-structure-container .front-plan-home-right-bay-measurement::after,
+.left-bottom-container .left-bottom-left-measurement::after,
+.left-bottom-container .left-bottom-right-measurement::after {
+  content: "|";
+  position: absolute;
+  transform: rotate(90deg);
+  right: -10px;
+}
+
+.left-bottom-container .left-bottom-left-measurement,
+.left-bottom-container .left-bottom-right-measurement {
+  position: absolute;
+  font-size: 12px !important;
+  bottom: -25px;
+  left: 20px;
+}
+
+.left-bottom-container .left-bottom-right-measurement {
+  left: unset;
+  right: 20px;
+}
+
+.plan-front-container .front-plan-left-sizing.front-side {
+  left: -45px;
+}
+
+.no-top-margin {
+  margin-top: 0 !important; /* Use !important to override any other conflicting styles */
+}
+
+.front-plan-home-right-side-bay.no-top-margin {
+  margin-top: 0 !important; /* Use !important to override any other conflicting styles */
+}
+
+
+.left-bottom-center-top-boxes-container .bay {
+  font-size: 14px !important;
+}

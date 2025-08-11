@@ -1,0 +1,59 @@
+.barn-window-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    background-color: #EBEBEB;
+    color: #000;
+    overflow: auto; /* Changed overflow-y to overflow */
+    box-sizing: border-box;
+    padding: 10px; /* Changed padding to 10px */
+    border-radius: 5px;
+    z-index: 999;
+    transition: width 0.3s ease;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .barn-window-headings {
+    display: flex;
+    width: 100%;
+    padding-bottom: 7px;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    justify-content: space-between;
+  }
+  
+  .field-box {
+    margin: 10px 0;
+  }
+  
+  .range-box {
+    display: flex;
+    height: 50px;
+    padding: 10px;
+  }
+  
+  .sizeInput {
+    display: block;
+    height: 100%;
+    font-weight: bold;
+    border-radius: 2%;
+    text-align: center;
+    border: 2px solid #000;
+  }
+  
+  .barn-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    padding: 5px;
+    border: 1px solid black;
+    gap: 5px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 7px 10px 0px rgba(0,0,0,0.2);  }
+  

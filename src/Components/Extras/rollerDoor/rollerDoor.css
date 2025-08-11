@@ -1,0 +1,82 @@
+.roller-door-container {
+  display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    background-color: #EBEBEB;
+    color: #000;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+    transition: width 0.3s ease;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.roller-door-headings {
+  display: flex;
+  width: 100%;
+  padding-bottom: 7px;
+  border-bottom: 1px solid black;
+  font-size: 14px; /* Decreased font size */
+  justify-content: space-between;
+}
+
+.field-box {
+  margin: 5px 0; /* Reduced margin */
+}
+
+.range-box {
+  display: flex;
+  height: 10px; /* Adjusted height */
+  padding: 10px; /* Reduced padding */
+}
+
+.sizeInput {
+  display: block;
+  height: 100%;
+  font-weight: bold;
+  border-radius: 2%;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.roller-door {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  padding: 5px;
+  border: 1px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.roller-door-toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px; /* Reduced padding */
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem; /* Decreased font size */
+}
+
+.roller-door-toggle-button:hover {
+  background-color: white;
+}
+
+.roller-door-toggle-button .fa-door {
+  font-size: 1 rem; /* Decreased font size */
+  margin-right: 5px; /* Reduced margin */
+}

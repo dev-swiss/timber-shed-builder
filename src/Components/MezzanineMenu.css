@@ -1,0 +1,147 @@
+.mezzanine-container {
+  display: block;
+  position: relative;
+  top: 0;
+  background-color: #EBEBEB;
+  color: #000;
+  max-height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  z-index: 999;
+  transition: width 0.3s ease;
+}
+
+.field-box {
+  text-align: start;
+  border: 1px solid #66666633;
+  padding: 10px 8px;
+  border-radius: 9px;
+  width: 100%;
+}
+
+.bay-item {
+  margin-bottom: 20px; /* Space between bays */
+  padding-bottom: 20px; /* Space before the grey line */
+  border-bottom: 2px solid silver; /* Separator line */
+}
+
+.bay-item .checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between bay text and checkbox */
+}
+
+.bay-item span {
+  font-size: 15px; /* Bay text size */
+  margin-left: 20px;
+  margin-right: 35%; /* Add space between bay text and checkbox */
+  margin-top: 19px;
+  
+}
+
+.bay-item input[type="checkbox"] {
+  width: 20px; /* Adjust checkbox size */
+  height: 20px; /* Adjust checkbox size */
+  margin-right: 8px; /* Reduce space between checkbox and label */
+  margin-top: 15px;
+}
+.bay-item label {
+  font-size: 15px; /* Text size for Visible */
+  margin-left: 0; /* Remove extra space before label */
+  margin-top: 15px; /* Add top margin */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Distribute buttons evenly */
+  margin-top: 15px; /* Space between checkbox row and buttons */
+}
+
+.button-container button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add greyish shadow */
+}
+
+
+.button-container button:hover {
+  background-color: #d8d8d8;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+}
+
+.button-container button.selected {
+  background-color: #d9d4d4;
+  color: black;
+  border: none;
+}
+
+/* Slider Container */
+.slider-container {
+  margin-bottom: 20px; /* Space between slider and bays */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the contents to the start (left) */
+}
+
+/* Slider and Value Box */
+.slider-box {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between slider and the value box */
+}
+
+/* Smaller Slider */
+.slider-box input[type="range"] {
+  width: 150px; /* Smaller width for the slider */
+  -webkit-appearance: none; /* Override default appearance on WebKit browsers */
+  appearance: none;
+  height: 6px; /* Smaller slider track height */
+  background: #ccc; /* Slider track color */
+  outline: none; /* Remove default outline */
+  border-radius: 5px; /* Rounded track */
+}
+
+/* WebKit-specific Slider Thumb */
+.slider-box input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default appearance on WebKit browsers */
+  appearance: none;
+  width: 18px; /* Thumb size */
+  height: 18px; /* Thumb size */
+  background: #fff; /* Thumb color inside */
+  border: 2px solid #007bff; /* Blue border around thumb */
+  border-radius: 50%; /* Make thumb circular */
+  cursor: pointer; /* Cursor change on hover */
+  transition: background-color 0.3s ease;
+  margin-top: -5px; /* Move thumb upwards to align with the track */
+}
+
+/* Track Style for WebKit */
+.slider-box input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px; /* Smaller track height */
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Updated Value Box */
+.slider-box span {
+  font-size: 14px;
+  background-color: #fff; /* White background for the value box */
+  padding: 5px 11px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 70px; /* Increase minimum width to ensure proper fit */
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap; /* Prevents text from wrapping */
+}

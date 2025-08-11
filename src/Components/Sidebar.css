@@ -1,0 +1,75 @@
+.hide-item {
+  display: none !important;
+}
+
+.show-item {
+  display: block !important;
+}
+
+.quote__container,
+.edit__New__container,
+.view__container {
+  position: fixed;
+  top: 4.0rem;
+  width: 372px;
+  background: #fff;
+  z-index: 10;
+  right: 14.5rem;
+  border-radius: 7px;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border: 1px solid #8888888a;
+  max-height: 85%;
+  overflow: auto;
+  display: none;
+  text-align: center;
+  gap: 10px;
+}
+.type__container {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  left: 5rem;
+  width: 94%;
+  height: 100vh;
+  background: #e4e4e4;
+  z-index: 10;
+  right: 5.5rem;
+  border-radius: 7px;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border: 1px solid #8888888a;
+  max-height: 90%;
+  overflow: auto;
+  gap: 10;
+  transition: all 5s ease-in;
+}
+
+.quote__container::-webkit-scrollbar,
+.edit__New__container::-webkit-scrollbar .type__container::-webkit-scrollbar,
+.view__container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.quote__container::-webkit-scrollbar-track,
+.edit__New__container::-webkit-scrollbar-track,
+.type__container::-webkit-scrollbar-track,
+.view__container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.quote__container::-webkit-scrollbar-thumb,
+.edit__New__container::-webkit-scrollbar-thumb
+  .type__container::-webkit-scrollbar-thumb,
+.view__container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.quote__container::-webkit-scrollbar-thumb:hover,
+.edit__New__container::-webkit-scrollbar-thumb:hover
+  .type__container::-webkit-scrollbar-thumb:hover,
+.view__container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

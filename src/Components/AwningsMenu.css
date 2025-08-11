@@ -1,0 +1,117 @@
+hr {
+    background-color:#00000063 !important;
+    border: unset;
+    height: 1px;
+}
+
+label {
+    margin-bottom: 0 !important;
+    font-size: 14px;
+}
+
+.awnings-container{
+    display: block;
+    position: relative;
+    top: 0;
+    background-color: #EBEBEB;
+    color: #000;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    z-index: 999;
+    transition: width 0.3s ease;
+}
+
+
+.checkbox{
+    display: flex;
+    margin: 10px 0;
+}
+.checkbox input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.awnings-container input[type=range], .awnings-container input[type=text]{
+    padding: 10px 0;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #000;
+    outline: none;
+    background-color: #e6e3e3;
+    border-radius: 5px;
+}
+
+.field-box select {
+    text-align: start;
+    border: 1px solid #66666633;
+    padding: 10px 8px;
+    border-radius: 9px;
+    width: 100%;
+}
+
+.field-box span {
+    font-size: 16px;
+    margin: 14px 0 3px 0;
+    display: block;
+}
+
+.range-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range-box input[type=range]{
+    -webkit-appearance: none;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    padding: 0;
+    background: none;
+    width: 70%;
+}
+
+.range-box input[type=text], .range-box input[type=number]{
+    outline: none;
+    border: none;
+    width: 20%;
+    border-radius: 9px;
+    background: #fff;
+}
+
+.range-box input[type=range]::-webkit-slider-runnable-track {
+    background-color: #d7dbdd;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+.range-box input[type=range]::-moz-range-thumb {
+    border-radius: 20px;
+    height: 18px;
+    width: 18px;
+    border: none;
+    background: none;
+    background-color: red;
+}
+  
+.range-box input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border-radius: 100%;
+    background-color: #fff;
+    height: 18px;
+    width: 18px;
+    margin-top: -7px;
+    border: 3px solid #4361EE;
+}
+
+.hide-item {
+    display: none !important;
+}
